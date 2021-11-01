@@ -7,6 +7,11 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+//
+const oddNumbers = randomNumbers.filter((oddNumber) => oddNumber % 2 !== 0 && oddNumber)
+console.log(oddNumbers);
+//
+
 /*
   02
 
@@ -14,6 +19,10 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+//
+const crazyNumbersUnder = crazyNumbers.filter(crazyNumber => crazyNumber < 501)
+console.log(crazyNumbersUnder.length)
+//
 
 /*
   03
@@ -23,6 +32,11 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 */
 
 const numbers = [5, 7, 3]
+
+//
+const numbersSquared = numbers.map(number => number ** 2)
+console.log(numbersSquared)
+//
 
 /*
   04
@@ -45,6 +59,16 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+//
+const oldMovies = tarantinoMovies.filter(tarantinoMovie => {
+  if (tarantinoMovie.release < 2000) {
+    return tarantinoMovie
+  }
+})
+
+console.log(oldMovies)
+//
+
 /*
   05
 
@@ -57,10 +81,16 @@ const tvShows = [
   { name: 'Mr. Robot', releaseYear: 2015 },
   { name: 'True Detective', releaseYear: 2014 },
   { name: 'Hannibal', releaseYear: 2013 },
-  { name: 'The Handmaid\'s Tale', releaseYear: 2017 },
+  { name: "The Handmaid's Tale", releaseYear: 2017 },
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+//
+const nameTvShows = tvShows.map(nameTvShow => nameTvShow.name)
+
+console.log(nameTvShows)
+//
 
 /*
   06
@@ -77,7 +107,7 @@ const cart = [
   { name: 'Dark Souls III', price: 95.03 },
   { name: 'Shadow of the Tomb Raider', price: 101.19 },
   { name: 'Sekiro: Shadows Die Twice', price: 179.99 },
-  { name: 'Resident Evil 2', price: 119.90 },
+  { name: 'Resident Evil 2', price: 119.9 },
   { name: 'Death Stranding', price: 149.99 }
 ]
 
@@ -86,3 +116,11 @@ const cart = [
   - Nome 2
   - Nome 3
 */
+
+//
+const nameGames = cart.reduce(
+  (acc, gameName) => `${acc} - ${gameName.name} \n`, ''
+)
+
+console.log(nameGames)
+//
