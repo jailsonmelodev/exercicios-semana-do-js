@@ -8,9 +8,18 @@
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
 //
-const oddNumbers = randomNumbers.filter((oddNumber) => oddNumber % 2 !== 0 && oddNumber)
+const oddNumbers = randomNumbers.filter((oddNumber) => oddNumber % 2 !== 0)
 console.log(oddNumbers);
 //
+
+/* Resultado da aula
+const getOddNumbers = randomNumber => randomNumber % 2 === 1
+
+const oddNumbers = randomNumbers.filter(getOddNumbers)
+
+console.log(oddNumbers);
+*/
+
 
 /*
   02
@@ -19,10 +28,20 @@ console.log(oddNumbers);
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+
 //
 const crazyNumbersUnder = crazyNumbers.filter(crazyNumber => crazyNumber < 501)
 console.log(crazyNumbersUnder.length)
 //
+
+/* Resultado da aula
+const countNumbersLessThan501 = (accumulator, crazyNumber) => 
+  crazyNumber < 501 ? ++accumulator : accumulator
+
+const numbersLessThan501 = crazyNumbers.reduce(countNumbersLessThan501, 0)
+
+console.log(numbersLessThan501);
+*/
 
 /*
   03
@@ -37,6 +56,12 @@ const numbers = [5, 7, 3]
 const numbersSquared = numbers.map(number => number ** 2)
 console.log(numbersSquared)
 //
+
+/* Resultado da aula
+const squareNumbers = numbers.map(number => number ** 2)
+
+console.log(squareNumbers)
+*/
 
 /*
   04
@@ -69,6 +94,12 @@ const oldMovies = tarantinoMovies.filter(tarantinoMovie => {
 console.log(oldMovies)
 //
 
+/* Resultado da aula
+const moviesBefore2000 = tarantinoMovies.filter(({ release }) => release < 2000)
+  
+  console.log(moviesBefore2000)
+*/
+
 /*
   05
 
@@ -81,7 +112,7 @@ const tvShows = [
   { name: 'Mr. Robot', releaseYear: 2015 },
   { name: 'True Detective', releaseYear: 2014 },
   { name: 'Hannibal', releaseYear: 2013 },
-  { name: "The Handmaid's Tale", releaseYear: 2017 },
+  { name: 'The Handmaid\'s Tale', releaseYear: 2017 },
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
@@ -91,6 +122,12 @@ const nameTvShows = tvShows.map(nameTvShow => nameTvShow.name)
 
 console.log(nameTvShows)
 //
+
+/* Resultado da aula
+const showNames = tvShows.map({ name } => name)
+
+console.log(showNames)
+*/
 
 /*
   06
@@ -124,3 +161,10 @@ const nameGames = cart.reduce(
 
 console.log(nameGames)
 //
+
+/* Resultado da aula
+const productList = cart.reduce((accumulator, { name }) => 
+  `${accumulator}- ${name}\n`, '')
+
+console.log(productList)
+*/
